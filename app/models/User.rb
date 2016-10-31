@@ -7,7 +7,7 @@ class User
   attr_reader :password
   attr_accessor :password_confirmation
 
-  has n, :places
+  has n, :places, :bookings
 
   property :id, Serial
   property :first_name, String, required: true
