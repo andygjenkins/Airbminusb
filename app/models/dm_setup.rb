@@ -5,6 +5,6 @@ require_relative 'User'
 require_relative 'Place'
 require_relative 'Booking'
 
-DataMapper.setup(:default, 'postgres:///airbminusb')
+DataMapper.setup(:default, "postgres:///airbminusb_#{ENV['RACK_ENV']}")
 DataMapper.finalize
 DataMapper.auto_update!
