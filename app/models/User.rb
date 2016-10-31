@@ -7,6 +7,8 @@ class User
   attr_reader :password
   attr_accessor :password_confirmation
 
+  has n, :places
+
   property :id, Serial
   property :first_name, String, required: true
   property :surname, String, required: true
