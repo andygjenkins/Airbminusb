@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class Airbminusb < Sinatra::Base
   get '/' do
-    'Hello Airbminusb!'
+    erb :index
   end
 
   # start the server if ruby file executed directly
