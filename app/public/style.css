@@ -6,6 +6,33 @@ body{
   width: 600px
 }
 
+#topbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:60px;
+  background-color: #4E9A89;
+  border-bottom: #F1F1F1 solid 3px;
+}
+
+#topbar h3{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#topbar #menu_buttons{
+  display: block;
+  float: right;
+  margin-right: 10px;
+  height: 60px;
+  line-height: 60px;
+}
+
+#topbar a{
+  color: white;
+  margin: 3px;
+}
 
 #box{
   background-color: #178169;
@@ -25,14 +52,13 @@ body{
 .container input{
   width: 100%;
   clear: both;
+  margin: 5px;
 }
 
-.topbar {
-  position:fixed;
-   top:0;
-   left:0;
-   width:100%;
-   height:60px;
-   background-color: #4E9A89;
-   border-bottom: #F1F1F1 solid 3px;
+.container label{
+  margin: 2px;
+}
+
+.container input[type="submit"]{
+  margin-top: 15px;
 }
