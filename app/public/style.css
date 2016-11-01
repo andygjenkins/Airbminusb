@@ -18,10 +18,19 @@ body{
 
 .topbar h3{
   display: inline-block;
+  margin-left: 10px;
 }
 
 .topbar #menu_buttons{
-  display: inline-block;
+  display: block;
+  float: right;
+  margin-right: 10px;
+  height: 60px;
+  line-height: 60px;
+}
+
+.topbar a{
+  color: white;
 }
 
 #box{
