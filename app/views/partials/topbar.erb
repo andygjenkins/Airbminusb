@@ -1,15 +1,15 @@
-<h3> Welcome <%= current_user ? current_user.first_name : "" %> </h3>
+<h3> <%= current_user ? 'Welcome ' + current_user.first_name : "" %> </h3>
 <div id="menu_buttons">
   <% if current_user %>
     <a href="/spaces">Spaces</a>
     <a href="/requests">Requests</a>
-    <form method='post' action='/sessions'>
+    <a href="javascript:{}" onclick="document.getElementById('sign_out_form').submit(); return false;">Sign Out</a>
+    <form id='sign_out_form' method='post' action='/sessions'>
       <input type='hidden' name='_method' value='delete'>
-      <a href="/sessions/sign_in">Sign Out</a>
+      <!-- <input id='sign_out_button' type='submit' value='Sign Out'> -->
     </form>
-    </a>
   <% else %>
     <a href="/sessions/sign_in">Sign In</a>
-    <a href="/sessions/sign_up">Sign Up</a>
+    <a href="/users/sign_up">Sign Up</a>
   <% end %>
 </div>

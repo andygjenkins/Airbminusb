@@ -4,7 +4,7 @@ module SessionHelpers
     visit '/sessions/sign_in'
     fill_in :email, with: email
     fill_in :password, with: password
-    click_button 'Sign in'
+    click_button 'Submit'
   end
 
   def sign_up(first_name: "David",

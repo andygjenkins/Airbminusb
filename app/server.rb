@@ -10,7 +10,7 @@ class Airbminusb < Sinatra::Base
   enable :partial_underscores
 
   get '/' do
-    erb :index
+    erb :'listings'
   end
 
   helpers do
