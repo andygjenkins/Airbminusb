@@ -1,1 +1,11 @@
 <h3> Welcome to AirBminusB <%= current_user ? ", " + current_user.name : "" %> </h3>
+<div id="menu_buttons">
+  <% if current_user %>
+    <a href="/spaces">Spaces</a>
+    <a href="/requests">Requests</a>
+    <a href="/sessions/sign_out">Sign Out</a>
+  <% else %>
+    <a href="/sessions/sign_in">Sign In</a>
+    <a href="/sessions/sign_up">Sign Up</a>
+  <% end %>
+</div>

@@ -6,6 +6,23 @@ body{
   width: 600px
 }
 
+.topbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:60px;
+  background-color: #4E9A89;
+  border-bottom: #F1F1F1 solid 3px;
+}
+
+.topbar h3{
+  display: inline-block;
+}
+
+.topbar #menu_buttons{
+  display: inline-block;
+}
 
 #box{
   background-color: #178169;
@@ -25,14 +42,4 @@ body{
 .container input{
   width: 100%;
   clear: both;
-}
-
-.topbar {
-  position:fixed;
-   top:0;
-   left:0;
-   width:100%;
-   height:60px;
-   background-color: #4E9A89;
-   border-bottom: #F1F1F1 solid 3px;
 }
