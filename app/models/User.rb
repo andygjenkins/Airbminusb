@@ -1,4 +1,3 @@
-require_relative 'dm_setup.rb'
 require 'bcrypt'
 
 class User

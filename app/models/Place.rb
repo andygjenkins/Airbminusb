@@ -1,5 +1,3 @@
-require_relative 'dm_setup'
-
 class Place
   include DataMapper::Resource
 
