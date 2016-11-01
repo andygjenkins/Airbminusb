@@ -1,5 +1,3 @@
-require_relative 'dm_setup'
-
 class Booking
   include DataMapper::Resource
 
