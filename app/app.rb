@@ -18,6 +18,10 @@ class Airbminusb < Sinatra::Base
     erb :index
   end
 
+  get '/sessions/sign_in' do
+    erb :sign_in
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
