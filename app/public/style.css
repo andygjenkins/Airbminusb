@@ -6,7 +6,7 @@ body{
   width: 600px
 }
 
-.topbar{
+#topbar{
   position:fixed;
   top:0;
   left:0;
@@ -16,12 +16,12 @@ body{
   border-bottom: #F1F1F1 solid 3px;
 }
 
-.topbar h3{
+#topbar h3{
   display: inline-block;
   margin-left: 10px;
 }
 
-.topbar #menu_buttons{
+#topbar #menu_buttons{
   display: block;
   float: right;
   margin-right: 10px;
@@ -29,8 +29,9 @@ body{
   line-height: 60px;
 }
 
-.topbar a{
+#topbar a{
   color: white;
+  margin: 3px;
 }
 
 #box{
@@ -51,4 +52,13 @@ body{
 .container input{
   width: 100%;
   clear: both;
+  margin: 5px;
+}
+
+.container label{
+  margin: 2px;
+}
+
+.container input[type="submit"]{
+  margin-top: 15px;
 }
