@@ -10,6 +10,8 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'rake'
+gem 'timecop'
+gem 'mailgun-ruby'
 
 group :test do
   gem 'rspec'

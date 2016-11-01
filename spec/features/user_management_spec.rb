@@ -18,12 +18,12 @@ end
 #     User.create(first_name: "David", surname: "Davidson", email: "daviddavidson@david.com", password: "david", password_confirmation: "david")
 #   end
 #
-#   scenario 'User signs out' do
-#     sign_in(email: user.email, password: user.password)
-#     click_link('Sign Out')
-#     expect(current_path).to eq '/sign_in'
-#     expect(page).not_to have_content("Welcome David")
-#
-#   end
+#   # scenario 'User signs out' do
+#   #   sign_in(email: user.email, password: user.password)
+#   #   page.find(:xpath,"//*[text()='#{'Sign Out'}']").click
+#   #   expect(current_path).to eq '/sign_in'
+#   #   expect(page).not_to have_content("Welcome David")
+#   #
+#   # end
 #
 # end
