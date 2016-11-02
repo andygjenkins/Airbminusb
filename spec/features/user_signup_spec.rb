@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "Signing up a new user" do
   scenario "New user signing up should increment user count by 1 and display welcome message" do
     expect { sign_up }.to change(User, :count).by(1)
-    expect(page).to have_content("Welcome David Davidson")
+    expect(page).to have_content("Welcome David")
   end
 
   scenario "When user has a mismatching password confirmation, no new users are created" do

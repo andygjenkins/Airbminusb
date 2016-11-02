@@ -8,7 +8,7 @@ class Airbminusb < Sinatra::Base
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      redirect to('/')
+      redirect to '/' #Need to alter this path - just for testing at present.
     else
       flash.now[:errors] = ['The email or password is incorrect']
       erb :'sessions/sign_in'
@@ -17,8 +17,7 @@ class Airbminusb < Sinatra::Base
 
   delete '/sessions' do
     session[:user_id] = nil
-    flash.keep[:notice] = 'Goodbye!'
-    redirect to '/'
+    redirect to '/sessions/sign_in'
   end
 
 end
