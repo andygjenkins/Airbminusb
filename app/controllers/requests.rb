@@ -17,7 +17,7 @@ class Airbminusb < Sinatra::Base
 
   post '/requests/confirm' do
     @confirmed_booking = Booking.get(params[:id])
-    @confirmed_booking.update(confirmed: true)
+    @confirmed_booking.update(status: :confirmed)
     flash.now[:notices] = ["Booking Confirmed!"]
     redirect to '/requests'
   end
