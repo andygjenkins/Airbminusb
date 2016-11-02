@@ -10,6 +10,11 @@ class Booking
 
   validates_presence_of :date
 
+  def self.requests_made(user_id)
+    Booking.all(user_id: user_id)
+  end
 
-
+  def self.requests_received(user_id)
+    Booking.all(place: Place.all(user_id: user_id))
+  end
 end
