@@ -8,11 +8,10 @@
   <body>
     <div id="topbar">
       <%= erb :'partials/topbar' %>
-      <%= erb :'partials/flash' %>
     </div>
-    <%= yield %>
+    <main>
+      <%= erb :'partials/flash' %>
+      <%= yield %>
+    </main>
   </body>
-
-
-
 </html>

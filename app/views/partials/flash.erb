@@ -1,12 +1,22 @@
+
 <% if flash[:errors] && !flash[:errors].empty? %>
-  Please refer to the following errors below:
-  <ul id='errors'>
-    <% flash[:errors].each do |error| %>
-      <li><%= error %></li>
-    <% end %>
-  </ul>
+  <div id='flash_errors'>
+    Please refer to the following errors below:
+    <ul id='errors'>
+      <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
+
 <% if flash[:notice] %>
-  <div id='notice'><%= flash[:notice] %></div>
+  <div id='flash_notices'>
+    <ul id='notices'>
+      <% flash[:notice].each do |notice| %>
+        <li><%= notice %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>

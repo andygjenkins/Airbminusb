@@ -34,12 +34,17 @@ body{
   margin: 3px;
 }
 
-#box{
+main{
+  margin-top: 90px;
+}
+
+
+.box{
   background-color: #178169;
   padding: 10px 5px 50px 5px;
   border: #F1F1F1 solid 3px;
   text-align: center;
-  margin-top: 20%;
+  margin-top: 20px;
   font-weight: 300;
 }
 
