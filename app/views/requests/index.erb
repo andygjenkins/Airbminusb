@@ -1,0 +1,34 @@
+<div class="box requests_box" id="requests_made_box">
+  <% @requests_made.each do |request| %>
+    <div class="request_box">
+      <h3><%= request.place.name %></h3>
+      <p>On: <%= request.date %></p>
+      <p>Owned by: <%= request.place.user.first_name %></p>
+      <p>Status: <%= request.confirmed ? "Confirmed" : "Pending" %></p>
+    </div>
+  <% end %>
+<div>
+
+
+<div class="box requests_box" id="requests_received_box">
+  <% @requests_received.each do |request| %>
+    <div class="request_box">
+      <h3><%= request.place.name %></h3>
+      <p>On: <%= request.date %></p>
+      <p>Booked by: <%= request.user.first_name %></p>
+      <p>Status:
+        <% if request.confirmed %>
+          Confirmed
+        <% else %>
+          <form action="/requests/confirm" method="post">
+            <input type="hidden" value="<%= request.id %>" name="id">
+            <label for="Confirm">
+              Pending <button type="submit">Confirm</button>
+            </label>
+          </form>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+
+<div>

@@ -3,7 +3,6 @@ body{
   color: #FFF;
   background-color:#A6ACAF;
   margin: 0 auto;
-  width: 600px
 }
 
 #topbar{
@@ -40,12 +39,15 @@ main{
 
 
 .box{
+  display: block;
   background-color: #178169;
   padding: 10px 5px 50px 5px;
   border: #F1F1F1 solid 3px;
   text-align: center;
-  margin-top: 20px;
+  margin: 20px auto;
   font-weight: 300;
+  width: 600px;
+
 }
 
 .container{
@@ -65,4 +67,9 @@ main{
 
 .container input[type="submit"]{
   margin-top: 15px;
+}
+
+.requests_box{
+
+
 }
