@@ -18,7 +18,7 @@ class Airbminusb < Sinatra::Base
   end
 
   post '/places/listings' do
-    @places = Place.all(:within_available_range? => (params[:start_availability]))
+    @places = Place.all(:start_availability.lte => params[:start_availability], :end_availability.gte => params[:start_availability])
     erb :'places/listings'
   end
 
