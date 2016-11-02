@@ -1,0 +1,23 @@
+<div id="box">
+  <h1> List a Space </h1>
+  <form action="/places/new" method="post">
+    <div class="container">
+      <label>Place Name:
+        <input type="text" name="name" placeholder="Ye Old Lodge"/>
+      </label>
+      <label>Description:
+        <textarea name="description" placeholder="Upto 250 characters" maxlength="250"></textarea>
+      </label>
+      <label>Price per night:
+        <input type="number" name="price" placeholder="Price in GDP"/>
+      </label>
+      <label>Available from:
+        <input type="date" name="start_availability" placeholder="DD/MM/YYYY"/>
+      </label>
+      <label>Available to:
+        <input type="date" name="end_availability" placeholder="DD/MM/YYYY"/>
+      </label>
+      <input type="submit" value="List my place!">
+    </div>
+  </form>
+</div>
