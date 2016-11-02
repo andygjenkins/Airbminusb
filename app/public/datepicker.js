@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var array = ["2016-03-14","2016-03-15","2016-03-16"]
+  var array = ["2016-11-14","2016-11-15","2016-11-16"]
 
   $('#datepicker').datepicker({
    beforeShowDay: function(date){
