@@ -20,4 +20,9 @@ class Airbminusb < Sinatra::Base
     @places = Place.all(:within_available_range? => (params[:start_availability]))
     erb :'places/listings'
   end
+
+  get '/places/:id' do
+    @place = Place.first(id: params[:id])
+    erb :'places/one_place'
+  end
 end

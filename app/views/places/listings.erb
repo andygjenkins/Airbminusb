@@ -1,5 +1,5 @@
 
-<form id="box" action="" method="POST">
+<form class="box" action="" method="POST">
   From: <input type="date" name="start_availability">
   To: <input type="date" name="end_availability">
   <input type="submit" value="Show Places">
@@ -7,13 +7,14 @@
 
 <% @places.each do |place| %>
 
-  <div id="box">
+  <div class="box">
     <h2 class="place_name"><%= place.name %></h2>
     <p class="price">£<%= place.price %> per night</p>
     <p class="description"><%= place.description %></p>
     <p class="availability">Available from: <%= place.start_availability %> to: <%= place.end_availability %></p>
-    <p class="owner">Book with <a href="/users/<%= place.user.first_name %>"><%= place.user.first_name %></a></p>
-    <form action="/" method="post">
+    <!-- <p class="owner">Book <a href="/users/<%= place.user.first_name %>"><%= place.user.first_name %></a></p> -->
+    <form action="/places/<%=place.id%>" method="get">
+      <input type="submit" value="Book">
     </form>
   </div>
 <% end %>
