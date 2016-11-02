@@ -1,6 +1,6 @@
 class Airbminusb < Sinatra::Base
 
-  post 'requests/new' do
+  post '/requests/new' do
     params[:user_id] = session[:user_id]
     @booking = Booking.create(params)
     redirect to '/requests'

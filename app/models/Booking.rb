@@ -6,7 +6,7 @@ class Booking
 
   property :id, Serial
   property :date, Date
-  property :confirmed, Boolean, default: false
+  property :status, Enum[:pending, :confirmed, :rejected, :cancelled], default: :pending
 
   validates_presence_of :date
 
