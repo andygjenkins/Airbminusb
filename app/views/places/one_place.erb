@@ -1,6 +1,20 @@
-<div class="box">
-  <h2 class="place_name"><%= @place.name %></h2>
-  <p class="price">£<%= @place.price %> per night</p>
-  <p class="description"><%= @place.description %></p>
-  <p class="availability">Available from: <%= @place.start_availability %> to: <%= @place.end_availability %></p>
-</div>
+<html>
+  <head>
+  </head>
+
+  <body>
+  <div class="box">
+    <h2 class="place_name"><%= @place.name %></h2>
+    <p class="price">£<%= @place.price %> per night</p>
+    <p class="description"><%= @place.description %></p>
+    <p class="availability">Available from: <%= @place.start_availability %> to: <%= @place.end_availability %></p>
+  </div>
+  <div class="box">
+    <form action="/requests/new" method="POST">
+      Select date for booking: <input type='date' name='date'>
+      <input type="hidden" name="place_id" value="<%= @place.id %>">
+      <input type="submit" value="Request Booking">
+    </form>
+  </div>
+  </body>
+</html>
