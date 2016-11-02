@@ -15,7 +15,9 @@ class Airbminusb < Sinatra::Base
       session[:user_id] = @user.id
       redirect to '/places/listings'
     else
-      flash.now[:errors] = @user.errors.full_messages
+      flash.now[:errors] ||= []
+      flash.now[:errors] << "Errorrr!!!!!!!!"
+      @user.errors.full_messages.each{ |error| flash.now[:errors] << error }
       erb :'users/sign_up'
     end
   end
