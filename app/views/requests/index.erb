@@ -1,4 +1,5 @@
 <div class="box requests_box" id="requests_made_box">
+  <h2>Requests you've made</h2>
   <% @requests_made.each do |request| %>
     <div class="request_box">
       <h3><%= request.place.name %></h3>
@@ -11,6 +12,7 @@
 
 
 <div class="box requests_box" id="requests_received_box">
+  <h2>Requests you've received</h2>
   <% @requests_received.each do |request| %>
     <div class="request_box">
       <h3><%= request.place.name %></h3>
