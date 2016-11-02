@@ -13,7 +13,7 @@ class Airbminusb < Sinatra::Base
                         password_confirmation: params[:password_confirmation])
     if @user.save
       session[:user_id] = @user.id
-      erb :'listings' #Need to alter this path - just for testing at present.
+      redirect to '/places/listings'
     else
       flash.now[:errors] = @user.errors.full_messages
       erb :'users/sign_up'

@@ -10,7 +10,11 @@ class Airbminusb < Sinatra::Base
   enable :partial_underscores
 
   get '/' do
-    erb :'listings'
+    if current_user
+      redirect to '/places/listings'
+    else
+      redirect to '/sessions/sign_in'
+    end
   end
 
   helpers do

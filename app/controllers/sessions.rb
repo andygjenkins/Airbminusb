@@ -8,7 +8,7 @@ class Airbminusb < Sinatra::Base
     user = User.authenticate(params[:email], params[:password])
     if user
       session[:user_id] = user.id
-      redirect to '/' #Need to alter this path - just for testing at present.
+      redirect to '/places/listings'
     else
       flash.now[:errors] = ['The email or password is incorrect']
       erb :'sessions/sign_in'
