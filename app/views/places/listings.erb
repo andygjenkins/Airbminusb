@@ -12,8 +12,9 @@
     <p class="price">£<%= place.price %> per night</p>
     <p class="description"><%= place.description %></p>
     <p class="availability">Available from: <%= place.start_availability %> to: <%= place.end_availability %></p>
-    <p class="owner">Book with <a href="/users/<%= place.user.first_name %>"><%= place.user.first_name %></a></p>
-    <form action="/" method="post">
+    <!-- <p class="owner">Book <a href="/users/<%= place.user.first_name %>"><%= place.user.first_name %></a></p> -->
+    <form action="/places/<%=place.id%>" method="get">
+      <input type="submit" value="Book">
     </form>
   </div>
 <% end %>
