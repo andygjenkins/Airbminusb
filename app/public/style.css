@@ -70,6 +70,8 @@ main{
 }
 
 .requests_box{
-
-
+  width: 40%;
+  position: absolute;
+  float: top;
+  display: block;
 }
