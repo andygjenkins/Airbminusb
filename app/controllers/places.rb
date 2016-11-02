@@ -5,7 +5,7 @@ class Airbminusb < Sinatra::Base
   end
 
   post '/places/new' do
-    params[:user_id] = 1#session[:user_id]
+    params[:user_id] = session[:user_id]
     @place = Place.create(params)
     redirect '/places/listings'
     flash[:notice] << "#{@place.name} has been added."
