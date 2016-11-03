@@ -1,11 +1,11 @@
 <div class="box requests_box" id="requests_made_box">
   <h2>Requests you've made</h2>
   <% @requests_made.each do |request| %>
-    <div class="request_box">
+    <div class="box request_box">
       <h3><%= request.place.name %></h3>
       <p>On: <%= request.date %></p>
       <p>Owned by: <%= request.place.user.first_name %></p>
-      <p>Status: <%= request.confirmed ? "Confirmed" : "Pending" %></p>
+      <p>Status: <%= request.status %></p>
     </div>
   <% end %>
 </div>
@@ -14,21 +14,24 @@
 <div class="box requests_box" id="requests_received_box">
   <h2>Requests you've received</h2>
   <% @requests_received.each do |request| %>
-    <div class="request_box">
+    <div class="box request_box">
       <h3><%= request.place.name %></h3>
       <p>On: <%= request.date %></p>
       <p>Booked by: <%= request.user.first_name %></p>
-      <p>Status:
-        <% if request.confirmed %>
-          Confirmed
-        <% else %>
-          <form action="/requests/confirm" method="post">
-            <input type="hidden" value="<%= request.id %>" name="id">
-            <label for="Confirm">
-              Pending <button type="submit">Confirm</button>
-            </label>
-          </form>
-        <% end %>
+      <p>Status: <%= request.status %>
+        <form action="/requests/status" method="post">
+          <input type="hidden" value="<%= request.id %>" name="id">
+            <% if request.status == :pending %>
+              <button type="submit" name="decision" value="confirmed">Confirm</button>
+              <button type="submit" name="decision" value="rejected">Reject</button>
+            <% end %>
+            <% if request.status == :confirmed %>
+              <button type="submit" name="decision" value="rejected">Reject</button>
+            <% end %>
+            <% if request.status == :rejected %>
+              <button type="submit" name="decision" value="confirmed">Confirm</button>
+            <% end %>
+        </form>
       </p>
     </div>
   <% end %>

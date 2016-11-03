@@ -71,7 +71,20 @@ main{
 
 .requests_box{
   width: 40%;
-  position: absolute;
   float: top;
   display: block;
+}
+
+.request_box{
+  background-color: #006048;
+}
+
+#requests_made_box{
+  float: left;
+  margin-left: 5%;
+}
+
+#requests_received_box{
+  float: right;
+  margin-right: 5%;
 }
