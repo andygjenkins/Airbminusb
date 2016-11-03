@@ -41,13 +41,13 @@ main{
 .box{
   display: block;
   background-color: #178169;
-  padding: 10px 5px 50px 5px;
+  padding: 10px 5px 10px 5px;
   border: #F1F1F1 solid 3px;
   text-align: center;
   margin: 20px auto;
   font-weight: 300;
   width: 600px;
-
+  line-height: 0.75em;
 }
 
 .container{
@@ -87,4 +87,9 @@ main{
 #requests_received_box{
   float: right;
   margin-right: 5%;
+}
+
+#datepicker{
+   width: 281px;
+   margin: 10px auto;
 }
