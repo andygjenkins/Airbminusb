@@ -22,10 +22,9 @@
       <p>Status: <%= request.status %>
         <form action="/requests/status" method="post">
           <input type="hidden" value="<%= request.id %>" name="id">
-            <% if request.status == :cancelled %>
-            <% else %>
-              <button type="submit" name="decision" value="cancelled">Cancel</button>
-            <% end %>
+          <% if request.status != :cancelled %>
+            <button type="submit" name="decision" value="cancelled">Cancel</button>
+          <% end %>
         </form>
       </p>
     </div>
