@@ -1,7 +1,17 @@
 class Airbminusb < Sinatra::Base
 
   get '/places/new' do
+    @place = Place.new
     erb :'places/new'
+  end
+
+  get '/places/edit/:place_id' do
+    @place = Place.get(params[:place_id])
+    if @place.user == current_user
+      erb :'places/new'
+    else
+      redirect to '/places/listings'
+    end
   end
 
   post '/places/new' do
