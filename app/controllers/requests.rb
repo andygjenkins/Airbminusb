@@ -10,6 +10,7 @@ class Airbminusb < Sinatra::Base
   end
 
   get '/requests' do
+    Booking.cancel_past_bookings
     @requests_made = Booking.requests_made(session[:user_id])
     @requests_received = Booking.requests_received(session[:user_id])
 
