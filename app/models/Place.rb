@@ -17,6 +17,16 @@ class Place
     (date >= self.start_availability) && (date <= self.end_availability)
   end
 
+  def self.booked_dates(place_id)
+    place = Place.first(id: place_id)
+    bookings = Bookings.all(place: place, status: confirmed)
+    booked_dates_array = []
+    bookings.each do |booking|
+      booked_dates_array << booking.date
+    end
+    booked_dates_array
+  end
+
 
 
 end
