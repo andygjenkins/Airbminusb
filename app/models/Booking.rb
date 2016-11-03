@@ -17,10 +17,16 @@ class Booking
   def self.requests_received(user_id)
     Booking.all(place: Place.all(user_id: user_id))
   end
-    
+
   def self.reject_conflicting_and_confirm(booking)
     other_bookings = Booking.all(place: booking.place, date: booking.date, status: [:pending, :confirmed])
     other_bookings.update(status: :rejected)
     booking.update(status: :confirmed)
   end
+
+  def self.cancel_past_bookings
+    past_bookings = Booking.all(:date.lt => Date.today, status: :pending)
+    past_bookings.update(status: :cancelled)
+  end
+
 end
