@@ -17,12 +17,10 @@ class Booking
   def self.requests_received(user_id)
     Booking.all(place: Place.all(user_id: user_id))
   end
-
-  def self.requests_made_filter(user_id, status)
-    Booking.all(user_id: user_id) & Booking.all(status: status)
-  end
-
-  def self.requests_received_filter(user_id, status)
-    Booking.all(place: Place.all(user_id: user_id)) & Booking.all(status: status)
+    
+  def self.reject_conflicting_and_confirm(booking)
+    other_bookings = Booking.all(place: booking.place, date: booking.date, status: [:pending, :confirmed])
+    other_bookings.update(status: :rejected)
+    booking.update(status: :confirmed)
   end
 end
