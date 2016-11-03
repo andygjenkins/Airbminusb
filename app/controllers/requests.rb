@@ -19,7 +19,12 @@ class Airbminusb < Sinatra::Base
     @booking = Booking.get(params[:id])
     @booking.update(status: params[:decision])
     flash.now[:notices] = ["Booking Confirmed!"]
-    redirect to '/requests'
+    redirect to '/requests/filter'
   end
 
+  get '/requests/filter' do
+    @requests_made = Booking.requests_made_filter(session[:user_id], params[:status])
+    @requests_received = Booking.requests_received(session[:user_id])
+    erb :'requests/index'
+  end
 end
