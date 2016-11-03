@@ -1,19 +1,17 @@
-<script>document.getElementById('received_status_hidden').value = document.getElementById('received_dropdown').value</script>
-
 <div class="box requests_box" id="requests_made_box">
   <h2>Requests you've made</h2>
   <form action="/requests" method="get">
-    <input type="hidden" id="received_status_hidden" name="received_status">
-      <label>Select status
-        <select id="made_dropdown" name="made_status">
-          <option value="all">All</option>
-          <option value="pending">Pending</option>
-          <option value="confirmed">Confirmed</option>
-          <option value="rejected">Rejected</option>
-          <option value="cancelled">Cancelled</option>
-        </select>
-        <button type="Submit">Refine</button>
-      </label>
+    <input type="hidden" id="received_status_hidden" name="received_status" value="all">
+    <label>Select status
+      <select id="made_dropdown" name="made_status">
+        <option value="all">All</option>
+        <option value="pending">Pending</option>
+        <option value="confirmed">Confirmed</option>
+        <option value="rejected">Rejected</option>
+        <option value="cancelled">Cancelled</option>
+      </select>
+      <button type="Submit">Refine</button>
+    </label>
   </form>
 
   <% @requests_made.each do |request| %>
@@ -38,17 +36,17 @@
 <div class="box requests_box" id="requests_received_box">
   <h2>Requests you've received</h2>
     <form action="/requests" method="get">
-      <input type="hidden" name="made_status" value="document.getElementById('made_dropdown').value">
-        <label>Select status
-          <select id="received_dropdown" name="received_status">
-            <option value="all">All</option>
-            <option value="pending">Pending</option>
-            <option value="confirmed">Confirmed</option>
-            <option value="rejected">Rejected</option>
-            <option value="cancelled">Cancelled</option>
-          </select>
-          <button type="Submit">Refine</button>
-        </label>
+      <input type="hidden" name="made_status" value="all">
+      <label>Select status
+        <select id="received_dropdown" name="received_status">
+          <option value="all">All</option>
+          <option value="pending">Pending</option>
+          <option value="confirmed">Confirmed</option>
+          <option value="rejected">Rejected</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+        <button type="Submit">Refine</button>
+      </label>
     </form>
   <% @requests_received.each do |request| %>
     <div class="box request_box">

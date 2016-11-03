@@ -13,11 +13,11 @@ class Airbminusb < Sinatra::Base
     @requests_made = Booking.requests_made(session[:user_id])
     @requests_received = Booking.requests_received(session[:user_id])
 
-    if params[:made_status] && params[:made_status] != :all
-      @requests_made = @requests_made.all(status:params[:made_status])
+    if params[:made_status] && params[:made_status] != 'all'
+      @requests_made = @requests_made.all(status: params[:made_status])
     end
-    if params[:received_status] && params[:received_status] != :all
-      @requests_received = @requests_received.all(status:params[:received_status])
+    if params[:received_status] && params[:received_status] != 'all'
+      @requests_received = @requests_received.all(status: params[:received_status])
     end
     erb :'requests/index'
   end
