@@ -1,7 +1,7 @@
 
 <div class="box">
 <form action="/places/listings" method="POST">
-  Available on: <input type="date" name="start_availability">
+  Available on: <input type="date" name="start_availability" min="<%= Date.today %>">
   <input type="submit" value="Show Places">
 </form>
 <form action="/places/listings" method="get">

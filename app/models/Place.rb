@@ -19,7 +19,7 @@ class Place
 
   def self.booked_dates(place_id)
     place = Place.first(id: place_id)
-    bookings = Bookings.all(place: place, status: confirmed)
+    bookings = Booking.all(place: place, status: :confirmed)
     booked_dates_array = []
     bookings.each do |booking|
       booked_dates_array << booking.date
@@ -27,6 +27,9 @@ class Place
     booked_dates_array
   end
 
+  def start_or_today
+    [Date.today, self.start_availability].max
+  end
 
 
 end
