@@ -31,7 +31,7 @@ class Airbminusb < Sinatra::Base
 
   get '/check_booked' do
     @place = Place.first(id: session[:place_id])
-    start_availability = @place.start_availability.to_s
+    start_availability = @place.start_or_today.to_s
     end_availability = @place.end_availability.to_s
     booked_dates = Place.booked_dates(session[:place_id])
     {startAvailability: start_availability,

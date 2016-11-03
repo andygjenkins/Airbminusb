@@ -27,6 +27,9 @@ class Place
     booked_dates_array
   end
 
+  def start_or_today
+    [Date.today, self.start_availability].max
+  end
 
 
 end

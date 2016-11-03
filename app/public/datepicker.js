@@ -7,8 +7,6 @@ $(document).ready(function() {
 
     console.log(bookedDates);
 
-    var array = ["2016-11-11","2016-12-11","2016-13-11"]
-
     $('#datepicker').datepicker({
       dateFormat: 'yy-mm-dd',
       minDate: startAvailability,
