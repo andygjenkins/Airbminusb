@@ -77,6 +77,7 @@ main{
 
 .request_box{
   background-color: #006048;
+  width: auto;
 }
 
 #requests_made_box{

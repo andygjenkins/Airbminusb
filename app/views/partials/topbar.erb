@@ -1,9 +1,8 @@
 <h3> AirBminusB  <%= current_user ? 'Welcome ' + current_user.first_name : "" %> </h3>
 <div id="menu_buttons">
   <% if current_user %>
-    <a href="/places/new">List Space</a>
-    <a href="/places/listings">Book</a>
-    <a href="/requests">My Requests</a>
+    <a href="/spaces">Spaces</a>
+    <a href="/requests">Requests</a>
     <a href="javascript:{}" onclick="document.getElementById('sign_out_form').submit(); return false;">Sign Out</a>
     <form id='sign_out_form' method='post' action='/sessions'>
       <input type='hidden' name='_method' value='delete'>
