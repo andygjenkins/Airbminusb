@@ -15,9 +15,16 @@ body{
   border-bottom: #F1F1F1 solid 3px;
 }
 
+#logo {
+  margin: 10px 10px;
+  display: inline-block;
+}
+
 #topbar h3{
   display: inline-block;
   margin-left: 10px;
+  height: 70px;
+  vertical-align: middle;
 }
 
 #topbar #menu_buttons{
