@@ -15,9 +15,18 @@ body{
   border-bottom: #F1F1F1 solid 3px;
 }
 
+#logo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 5px;
+}
+
 #topbar h3{
   display: inline-block;
   margin-left: 10px;
+  height: 70px;
+  vertical-align: middle;
 }
 
 #topbar #menu_buttons{
