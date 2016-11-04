@@ -34,9 +34,4 @@ class Airbminusb < Sinatra::Base
     redirect to '/requests'
   end
 
-  get '/requests/filter' do
-    @requests_made = Booking.requests_made_filter(session[:user_id], params[:made_status])
-    @requests_received = Booking.requests_received_filter(session[:user_id], params[:received_status])
-    erb :'requests/index'
-  end
 end

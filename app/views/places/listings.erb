@@ -1,14 +1,17 @@
 
 <div class="box">
-<form action="/places/listings" method="POST">
-  Available on: <input type="date" name="start_availability" min="<%= Date.today %>">
-  <input type="submit" value="Show Places">
-</form>
-<form action="/places/listings" method="get">
-  <input type="submit" value="Show All">
-</form>
-</div>
+  <form action="/places/listings" method="get">
+    Available on: <input type="date" name="start_availability" min="<%= Date.today %>" value="<%= params[:start_availability] ? params[:start_availability] : Date.today%>">
+    <select name="place_dropdown">
+      <option value='all_places'>all places</option>
+      <option value='your_places'>your places</option>
+      <option value='other_places'>other places</option>
+    </select>
+    <input name="Show" type="submit" value="Show Places">
+    <input name="Show" type="submit" value="Show All">
+  </form>
 
+</div>
 
 <% @places.each do |place| %>
 
@@ -17,8 +20,14 @@
     <p class="price">£<%= place.price %> per night</p>
     <p class="description"><%= place.description %></p>
     <p class="availability">Available from: <%= place.start_availability %> to: <%= place.end_availability %></p>
-    <form action="/places/<%=place.id%>" method="get">
-      <input type="submit" value="Book">
-    </form>
+    <% if place.user == current_user %>
+      <form action="/places/edit/<%= place.id %>" method="get">
+        <input type="submit" value="Edit">
+      </form>
+    <% else %>
+      <form action="/places/<%= place.id %>" method="get">
+        <input type="submit" value="Book">
+      </form>
+    <% end %>
   </div>
 <% end %>

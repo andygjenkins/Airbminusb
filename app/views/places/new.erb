@@ -3,19 +3,19 @@
   <form action="/places/new" method="post">
     <div class="container">
       <label>Place Name:
-        <input type="text" name="name" placeholder="Ye Old Lodge"/>
+        <input type="text" name="name" placeholder="Ye Old Lodge" value="<%= @place.name %>"/>
       </label>
       <label>Description:
-        <textarea name="description" placeholder="Upto 250 characters" maxlength="250"></textarea>
+        <textarea name="description" placeholder="Upto 250 characters" maxlength="250"><%= @place.description %></textarea>
       </label>
       <label>Price per night:
-        <input type="number" name="price" placeholder="Price in GDP"/>
+        <input type="number" name="price" placeholder="Price in GDP" value="<%= @place.price %>"/>
       </label>
       <label>Available from:
-        <input type="date" name="start_availability" placeholder="DD/MM/YYYY"/>
+        <input type="date" name="start_availability" placeholder="DD/MM/YYYY" value="<%= @place.start_availability %>"/>
       </label>
       <label>Available to:
-        <input type="date" name="end_availability" placeholder="DD/MM/YYYY"/>
+        <input type="date" name="end_availability" placeholder="DD/MM/YYYY" value="<%= @place.end_availability %>"/>
       </label>
       <input type="submit" value="List my place!">
     </div>
