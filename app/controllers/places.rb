@@ -23,12 +23,19 @@ class Airbminusb < Sinatra::Base
   end
 
   get '/places/listings' do
-    @places = Place.all
-    erb :'places/listings'
-  end
-
-  post '/places/listings' do
-    @places = Place.all(:start_availability.lte => params[:start_availability], :end_availability.gte => params[:start_availability])
+    if params[:start_availability] && params[:Show] == "Show Places"
+      case params[:place_dropdown]
+      when "all_places"
+         @places = Place.all(:start_availability.lte => params[:start_availability], :end_availability.gte => params[:start_availability])
+      when "your_places"
+         @places = current_user.places.all(:start_availability.lte => params[:start_availability], :end_availability.gte => params[:start_availability])
+      when "other_places"
+        @places = Place.all(:start_availability.lte => params[:start_availability], :end_availability.gte => params[:start_availability]) - current_user.places.all
+      end
+    else
+      params[:start_availability] = Date.today
+      @places = Place.all
+    end
     erb :'places/listings'
   end
 
