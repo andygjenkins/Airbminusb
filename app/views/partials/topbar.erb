@@ -1,4 +1,5 @@
-<h3> AirBminusB  <%= current_user ? 'Welcome ' + current_user.first_name : "" %> </h3>
+<img src="airb-b.png" id="airb-b" alt="airb-b">
+<h3><%= current_user ? 'Welcome ' + current_user.first_name : "" %> </h3>
 <div id="menu_buttons">
   <% if current_user %>
     <a href="/places/listings">Book</a>
