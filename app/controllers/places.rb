@@ -1,7 +1,7 @@
 class Airbminusb < Sinatra::Base
 
   get '/places/new' do
-    @place = Place.new
+    @place = Place.new(start_availability: Date.today, end_availability: Date.today + 365)
     erb :'places/new'
   end
 
@@ -16,10 +16,14 @@ class Airbminusb < Sinatra::Base
 
   post '/places/new' do
     params[:user_id] = session[:user_id]
-    @place = Place.create(params)
-    flash.now[:notices] ||= []
-    flash.now[:notices] << "#{@place.name} has been added."
-    redirect to '/places/listings'
+    @place = Place.new(params)
+    if @place.save
+      flash.now[:notices] = ["#{@place.name} has been added."]
+      redirect to '/places/listings'
+    else
+      flash.next[:errors] = @place.errors.full_messages
+      redirect '/places/new'
+    end
   end
 
   get '/places/listings' do

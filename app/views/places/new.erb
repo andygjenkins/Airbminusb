@@ -12,10 +12,10 @@
         <input type="number" name="price" placeholder="Price in GDP" value="<%= @place.price %>"/>
       </label>
       <label>Available from:
-        <input type="date" name="start_availability" placeholder="DD/MM/YYYY" value="<%= @place.start_availability %>"/>
+        <input type="date" name="start_availability" placeholder="DD/MM/YYYY" min="<%= Date.today %>" value="<%= @place.start_availability %>"/>
       </label>
       <label>Available to:
-        <input type="date" name="end_availability" placeholder="DD/MM/YYYY" value="<%= @place.end_availability %>"/>
+        <input type="date" name="end_availability" placeholder="DD/MM/YYYY" min="<%= Date.today + 1 %>" value="<%= @place.end_availability %>"/>
       </label>
       <input type="submit" value="List my place!">
     </div>
