@@ -7,7 +7,7 @@ class Airbminusb < Sinatra::Base
 
   get '/places/edit/:place_id' do
     @place = Place.get(params[:place_id])
-    if @place.user == current_user
+    if @place && @place.user == current_user
       erb :'places/new'
     else
       redirect to '/places/listings'
